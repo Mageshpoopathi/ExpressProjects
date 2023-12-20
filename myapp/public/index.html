@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+    <title>CALCULATOR</title>
+</head>
+<body>
+    <div class="whole-container">
+        <div class="calculator">
+            <form>
+                <div>
+                    <h1>CALCULATOR</h1>
+                    <input class="one" type="text" placeholder="0" id="inp" name="display">
+                </div>
+                <div>
+                    <input class="one" type="button" value="CLR" onclick="display.value ='' ">
+                    <input class="one" type="button" value="DEL" onclick="display.value = display.value.toString().slice(0,-1)" >
+                    <input class="one" type="button" value="." onclick="display.value +='7' ">
+                    <input class="one" type="button" value="/" onclick="display.value +='/' ">
+                </div>
+                <div>
+                    <input class="one" type="button" value="7" onclick="display.value +='7' ">
+                    <input class="one" type="button" value="8" onclick="display.value +='8' ">
+                    <input class="one" type="button" value="9" onclick="display.value +='9' ">
+                    <input class="one" type="button" value="*" onclick="display.value +='*' ">
+                </div>
+                <div>
+                    <input class="one" type="button" value="4" onclick="display.value +='4' ">
+                    <input class="one" type="button" value="5" onclick="display.value +='5' ">
+                    <input class="one" type="button" value="6" onclick="display.value +='6' ">
+                    <input class="one" type="button" value="+" onclick="display.value +='+' ">
+                </div>
+                <div>
+                    <input class="one" type="button" value="3" onclick="display.value +='3' ">
+                    <input class="one" type="button" value="2" onclick="display.value +='2' ">
+                    <input class="one" type="button" value="1" onclick="display.value +='1' ">
+                    <input class="one" type="button" value="-" onclick="display.value +='-' ">
+                </div>
+                <div>
+                    <input class="one" type="button" value="0" onclick="display.value +='0' ">
+                    <input class="one" type="button" value="==" onclick="calculate()"><br>
+                </div>
+                <div >
+                    <div class="name">
+                        <label class="label" for="FName">Enter your First Name is:</label><br>
+                        <input class="input" type="text" id="FName" name="firstName" ><br>
+                    </div>
+                    <div class="name">
+                        <label class="label" for="LName">Enter your Last Name is:</label><br>
+                        <input class="input" type="text" id="LName" name="lastName" ><br>
+                    </div>
+                    <div>
+                        <div class="black">SubmitButton</div>
+                    </div>
+                    <button class="white" type="button" >
+                        <span class="green">submit</span>
+                    </button>
+                    <span class="white">Click</span>
+                </div>
+                <a class="link" href="https://www.google.co.in"><h3>Link</h3></a>
+                <a class="link" href="https://www.google.co.in"><h3>googleLink</h3></a>
+            </form>
+        </div>
+    </div>
+    <script>
+        function calculate() {
+            var display = document.getElementById("inp");
+            try {
+                var result = eval(display.value);
+                display.value = result;
+            } catch (error) {
+                display.value = "Error";
+            }
+        }
+    </script>
+    
+</body>
+</html>
